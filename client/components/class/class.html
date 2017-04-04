@@ -1,0 +1,41 @@
+<md-toolbar >
+    <div layout="column" layout-align="top center">
+        <h3>College of Engineering</h3>
+    </div>
+    
+</md-toolbar>
+
+<div flex class="container" layout="row" >
+    <md-sidenav flex md-is-locked-open="$mdMedia('gt-md')"  class="md-whiteframe-4dp" >
+        <left-nav user-data="userData"></left-nav>
+     </md-sidenav>
+    
+    <md-content flex  layout="column">
+        
+        <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="class in classes" ng-click="viewClass(class)">
+              <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch >
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">Class Id: {{class.class_id}}</span>
+                    <span class="md-subhead">Course Code:{{class.course_code}}</span>
+                    <span class="md-subhead">Term: {{class.term}}</span>
+                    <span class="md-subhead">Academic Year: {{class.academic_year}}</span>  
+                  </md-card-title-text>
+                  <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                  </md-card-title-media>
+                </md-card-title>
+
+              </md-card>
+        </div>
+    </md-content>
+</div>
+
+
+
+
+
+
+
+
+

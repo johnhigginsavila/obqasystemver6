@@ -1,0 +1,17 @@
+
+.avatar-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.avatar-btn {
+    padding: 0;
+    margin: 0;
+}
+
+.avatar-box {
+    margin-top: 5px;
+    margin-bottom: 0;
+    height: 55px;
+    width: 55px;
+}

@@ -1,0 +1,62 @@
+<md-toolbar >
+    <div layout="column" layout-align="top center">
+        <h3>College of Engineering</h3>
+    </div>
+    
+</md-toolbar>
+
+<div flex class="container" layout="row" >
+    <md-sidenav flex md-is-locked-open="$mdMedia('false')"  class="md-whiteframe-4dp" >
+        <left-nav user-data="userData"></left-nav>
+    </md-sidenav>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+        <md-button ng-click="close()" class="md-primary">Close Sidenav Right</md-button>
+        <courses-to-be-assessed></courses-to-be-assessed>
+    </md-sidenav>
+    
+    <md-content flex  layout="column">
+        </br>
+         <div layout="row" layout-align="space-between center">
+            <span>Academic Year</span>
+            <md-select ng-model="selectedYear" placeholder="Select academic year" ng-change="academicYearChange(selectedYear)"  class="md-no-underline" aria-label="Academic Year">
+              <md-option value="2014-2015">2014-2015</md-option>
+              <md-option value="2015-2016">2015-2016</md-option>
+              <md-option value="2016-2017">2016-2017</md-option>
+              <md-option value="2017-2018">2017-2018</md-option>
+              <md-option value="2018-2019">2018-2019</md-option>
+            </md-select>
+          </div>
+        
+        <h3>{{selectedYear}}</h3>
+        <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">Toggle right</md-button>
+        
+        
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th>Courses</th>
+                    <th ng-repeat="sopi in sopis">
+                        {{sopi.sopi_code}}
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody class="no-margin">
+                <tr class="no-margin" ng-repeat="course in courses">
+                <td>{{course.course_code}}</td>
+                <td class="no-margin" ng-repeat="sopi in sopis">
+                     <input-cell program-course-id="{{course.id}}" program-sopi-id="{{sopi.program_sopi_id}} " academic-year="{{academicYear}}"></input-cell>
+                </td>    
+            </tr>
+            </tbody>
+
+        </table>
+    
+    
+    </md-content>
+</div>
+
+
+
+
+

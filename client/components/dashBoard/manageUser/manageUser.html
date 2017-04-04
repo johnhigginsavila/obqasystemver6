@@ -1,0 +1,31 @@
+
+<div class="panel">
+    <div class="panel panel-body">
+        <div class="col-sm-6">
+            <form name="createUserForm">
+                <input required ng-model="user.username" type="text" class="form-control " placeholder="Username" aria-describedby="basic-addon1"></br>
+                <input required ng-model="user.email" type="text" class="form-control " placeholder="email" aria-describedby="basic-addon1"></br> 
+                <input required ng-model="user.user_password" type="text" class="form-control " placeholder="Password" aria-describedby="basic-addon1"></br>
+                <input required ng-model="user.program_id" type="text" class="form-control " placeholder="Programs: 1=CHE, 2=CE, 3=CPE, 4=ECE, 5=IE, 6=MEM, 7=ME" aria-describedby="basic-addon1"></br>
+                <input required ng-model="user.userRestriction" type="text" class="form-control " placeholder="Restrictions: 3,4,5 " aria-describedby="basic-addon1"></br>
+                <input required ng-model="user.last_name" type="text" class="form-control " placeholder="Lastname" aria-describedby="basic-addon1"></br>
+                <input required ng-model="user.first_name" type="text" class="form-control " placeholder="Firstname" aria-describedby="basic-addon1"></br>
+                <button ng-click="createUser(createUserForm, user)" type="button" class="btn btn-default btn-block btn-success">Create User</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<ul>
+    <li ng-repeat="user in users">
+        <ul>
+            <li>username: {{user.username}}</li>
+            <li>program: {{user.program_name}}</li>
+            <li>position: {{user.position}}</li>
+            <li>email: {{user.email}}</li>
+        </ul>
+        
+        
+    </li>
+</ul>

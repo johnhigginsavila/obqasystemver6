@@ -1,0 +1,20 @@
+<md-dialog aria-label="Mango (Fruit)">
+    <form accept-charset="UTF-8" ng-submit="uploadPic(picFile)" name="myForm">
+        <br>Photo:
+        <input type="file" ngf-select ng-model="picFile" ngf-multiple="false" name="file" accept="image/*" ngf-max-size="50MB" required />
+        <br>
+
+        <i ng-show="myForm.file.$error.maxSize">File too large {{picFile.size / 1000000|number:1}}MB: max {{picFile.$errorParam}}</i>
+
+        <img ng-show="myForm.file.$valid" ngf-src="!picFile.$error && picFile" class="thumb">
+
+        <br>
+
+        <md-button class="btn btn-info" type="submit">Submit</md-button>
+        <md-button ng-click="exit()" class="btn btn-info" type="submit">Exit</md-button>
+        <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%" ng-bind="picFile.progress + '%'" class="ng-binding"></div>
+        </span>
+        <span ng-show="picFile.result">Upload Successful</span>
+    </form>
+</md-dialog>

@@ -1,0 +1,9 @@
+
+<md-list>
+    <md-list-item ng-repeat="page in pages">
+        <md-button ng-click="goToPage(page.page_name)">{{page.display_name}}</md-button>
+    </md-list-item>
+    <md-list-item>
+        <md-button ng-click="logOut()">Log-out</md-button>
+    </md-list-item>
+</md-list>
